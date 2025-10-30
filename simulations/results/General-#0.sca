@@ -1,0 +1,122 @@
+version 3
+run General-0-20251030-21:44:23-16652
+attr configname General
+attr datetime 20251030-21:44:23
+attr datetimef 20251030-214423
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network smartdhcpdns.SmartNetwork
+attr processid 16652
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config network smartdhcpdns.SmartNetwork
+config sim-time-limit 200s
+config **.vector-recording false
+config **.client[*].startTime "uniform(1s, 5s)"
+config **.client[*].leaseTime 60s
+config **.server.ipPool "\"192.168.1.10-192.168.1.50\""
+config **.server.subnetMask "\"255.255.255.0\""
+config **.server.gateway "\"192.168.1.1\""
+config **.server.dnsServer "\"192.168.1.1\""
+config **.server.leaseTime 60s
+config **.server.friendlyNames "\"AA:BB:CC:DD:EE:01=laptop, AA:BB:CC:DD:EE:02=desktop, AA:BB:CC:DD:EE:03=printer\""
+
+par SmartNetwork.client[0].port$o.channel typename "\"ned.DelayChannel\""
+par SmartNetwork.client[0].port$o.channel disabled false
+attr mutable ""
+par SmartNetwork.client[0].port$o.channel delay 0.001s
+attr mutable ""
+attr unit s
+par SmartNetwork.server.port$o[0].channel typename "\"ned.DelayChannel\""
+par SmartNetwork.server.port$o[0].channel disabled false
+attr mutable ""
+par SmartNetwork.server.port$o[0].channel delay 0.001s
+attr mutable ""
+attr unit s
+par SmartNetwork.client[1].port$o.channel typename "\"ned.DelayChannel\""
+par SmartNetwork.client[1].port$o.channel disabled false
+attr mutable ""
+par SmartNetwork.client[1].port$o.channel delay 0.001s
+attr mutable ""
+attr unit s
+par SmartNetwork.server.port$o[1].channel typename "\"ned.DelayChannel\""
+par SmartNetwork.server.port$o[1].channel disabled false
+attr mutable ""
+par SmartNetwork.server.port$o[1].channel delay 0.001s
+attr mutable ""
+attr unit s
+par SmartNetwork.client[2].port$o.channel typename "\"ned.DelayChannel\""
+par SmartNetwork.client[2].port$o.channel disabled false
+attr mutable ""
+par SmartNetwork.client[2].port$o.channel delay 0.001s
+attr mutable ""
+attr unit s
+par SmartNetwork.server.port$o[2].channel typename "\"ned.DelayChannel\""
+par SmartNetwork.server.port$o[2].channel disabled false
+attr mutable ""
+par SmartNetwork.server.port$o[2].channel delay 0.001s
+attr mutable ""
+attr unit s
+par SmartNetwork.server typename "\"smartdhcpdns.SmartServer\""
+par SmartNetwork.server ipPool "\"192.168.1.10-192.168.1.50\""
+par SmartNetwork.server subnetMask "\"255.255.255.0\""
+par SmartNetwork.server gateway "\"192.168.1.1\""
+par SmartNetwork.server dnsServer "\"192.168.1.1\""
+par SmartNetwork.server leaseTime 60s
+attr unit s
+par SmartNetwork.server friendlyNames "\"AA:BB:CC:DD:EE:01=laptop, AA:BB:CC:DD:EE:02=desktop, AA:BB:CC:DD:EE:03=printer\""
+par SmartNetwork.server enableSecurity true
+par SmartNetwork.server macWhitelist "\"AA:BB:CC:DD:EE:01,AA:BB:CC:DD:EE:02,AA:BB:CC:DD:EE:03\""
+par SmartNetwork.server maxRequestsPerMinute 10
+scalar SmartNetwork.server dnsRegistrations:count 6
+attr recordingmode count
+attr source dnsRegistered
+scalar SmartNetwork.server dhcpAssignments:count 6
+attr recordingmode count
+attr source dhcpAssigned
+par SmartNetwork.client[0] typename "\"smartdhcpdns.SmartClient\""
+par SmartNetwork.client[0] startTime 3.19525s
+attr unit s
+par SmartNetwork.client[0] leaseTime 60s
+attr unit s
+par SmartNetwork.client[0] hostname "\"\""
+scalar SmartNetwork.client[0] dnsQueries:count 5
+attr recordingmode count
+attr source dnsQuerySent
+scalar SmartNetwork.client[0] ipAssignments:count 2
+attr recordingmode count
+attr source ipAssigned
+par SmartNetwork.client[1] typename "\"smartdhcpdns.SmartClient\""
+par SmartNetwork.client[1] startTime 3.37138s
+attr unit s
+par SmartNetwork.client[1] leaseTime 60s
+attr unit s
+par SmartNetwork.client[1] hostname "\"\""
+scalar SmartNetwork.client[1] dnsQueries:count 0
+attr recordingmode count
+attr source dnsQuerySent
+scalar SmartNetwork.client[1] ipAssignments:count 2
+attr recordingmode count
+attr source ipAssigned
+par SmartNetwork.client[2] typename "\"smartdhcpdns.SmartClient\""
+par SmartNetwork.client[2] startTime 3.86076s
+attr unit s
+par SmartNetwork.client[2] leaseTime 60s
+attr unit s
+par SmartNetwork.client[2] hostname "\"\""
+scalar SmartNetwork.client[2] dnsQueries:count 0
+attr recordingmode count
+attr source dnsQuerySent
+scalar SmartNetwork.client[2] ipAssignments:count 2
+attr recordingmode count
+attr source ipAssigned
+par SmartNetwork typename "\"smartdhcpdns.SmartNetwork\""
+par SmartNetwork numClients 3
+

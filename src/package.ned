@@ -1,0 +1,3 @@
+package smartdhcpdns;
+
+@license(LGPL);
