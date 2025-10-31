@@ -26,14 +26,35 @@ This project implements a unified DHCP-DNS service that eliminates the tradition
 
 ## Project Structure
 
-SmartDhcpDns/
-├── src/ # Source code files
-│ ├── SmartServer.ned # Integrated DHCP-DNS server
-│ ├── SmartClient.ned # Network client implementation
-│ ├── SmartNetwork.ned # Network topology definition
-│ └── message types # Protocol message definitions
-├── simulations/ # Simulation configuration
-│ └── omnetpp.ini # Simulation parameters
-├── results/ # Simulation output and logs
-├── images/ # Network diagrams and screenshots
-└── documentation/ # Project report and documentation
+```
+SmartDnsDhcp/
+  src/
+    SmartServer.ned # Integrated DHCP-DNS server
+    SmartClient.ned # Network client implementation
+    SmartNetwork.ned # Network topology definition
+    Related .cc and .h files
+
+simulations/
+    omnetpp.ini
+    
+README.md                   # Project documentation
+```
+
+## Installation & Setup
+
+### Prerequisites
+- OMNeT++ 6.0 or later
+- INET Framework (for basic network components)
+
+### Building the Project
+1. Clone or download the project files
+2. Open OMNeT++ IDE
+3. Import existing project into workspace
+4. Build the project (Ctrl+B)
+
+### Configuration
+Edit `omnetpp.ini` to modify simulation parameters:
+```ini
+*.server.ipPool = "192.168.1.10-192.168.1.50"
+*.server.leaseTime = 60s
+*.server.friendlyNames = "AA:BB:CC:DD:EE:01=laptop, AA:BB:CC:DD:EE:02=desktop"
